@@ -13,6 +13,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import org.jetbrains.annotations.NotNull;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -101,7 +103,14 @@ public class MainActivity extends AppCompatActivity {
                     MainActivity.this.runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            System.out.println("Best response " + myResponse);
+                            try{
+                                JSONObject obj = new JSONObject(myResponse);
+                                JSONObject main = obj.getJSONObject("main");
+                                Double temp = main.getDouble("temp");
+                                firstCityTemp.setText(String.valueOf(temp));
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
                         }
                     });
 

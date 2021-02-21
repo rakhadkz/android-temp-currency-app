@@ -27,15 +27,11 @@
             android:layout_width="wrap_content"
             android:layout_weight="0.5"
             android:orientation="vertical">
-            <TextView
+            <Spinner
+                android:id="@+id/firstCitySelect"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Павлодар"
-                android:gravity="center_horizontal"
-                android:textSize="20dp"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:id="@+id/firstCityName"/>
+                android:entries="@array/cities" />
             <TextView
                 android:layout_marginTop="40dp"
                 android:layout_width="match_parent"
@@ -73,15 +69,11 @@
             android:layout_width="wrap_content"
             android:layout_weight="0.5"
             android:orientation="vertical">
-            <TextView
+            <Spinner
+                android:id="@+id/secondCitySelect"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Алматы"
-                android:gravity="center_horizontal"
-                android:textSize="20dp"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:id="@+id/secondCityName"/>
+                android:entries="@array/cities" />
             <TextView
                 android:layout_marginTop="40dp"
                 android:layout_width="match_parent"
@@ -131,35 +123,44 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <Spinner
-            android:id="@+id/firstCurrency"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.2"
-            />
-
-        <EditText
-            android:id="@+id/firstAmount"
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.3"
-            android:ems="10"
-            android:inputType="number" />
+            android:layout_weight="0.5"
+            android:orientation="vertical">
+            <Spinner
+                android:id="@+id/firstCurrency"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/currencies"
+                />
+            <EditText
+                android:id="@+id/firstAmount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number" />
+        </LinearLayout>
 
-        <Spinner
-            android:id="@+id/secondCurrency"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.2"
-            android:entries="@array/currencies"
-            />
-
-        <EditText
-            android:id="@+id/secondAmount"
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.3"
-            android:ems="10"
-            android:inputType="number" />
+            android:layout_weight="0.5">
+            <Spinner
+                android:id="@+id/secondCurrency"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/currencies"
+                />
+
+            <EditText
+                android:id="@+id/secondAmount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number" />
+        </LinearLayout>
+
     </LinearLayout>
 </LinearLayout>
