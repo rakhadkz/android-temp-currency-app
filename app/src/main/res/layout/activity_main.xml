@@ -48,6 +48,7 @@
                 android:layout_height="wrap_content"
                 android:text="Select"/>
             <RadioGroup
+                android:id="@+id/firstTempUnit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <RadioButton
@@ -90,6 +91,7 @@
                 android:layout_height="wrap_content"
                 android:text="Select"/>
             <RadioGroup
+                android:id="@+id/secondTempUnit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <RadioButton
